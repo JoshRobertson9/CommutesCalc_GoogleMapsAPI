@@ -5,15 +5,13 @@ import where_to_live
 file_name1 = "locations1.csv"
 file_name2 = "locations2.csv"
 
-while True:
-    try:
+try:
         print("Hello, would you like to know the commute schedule based on one starting location or compare the commutes of two locations?")
         choice = input("Type 1 or 2 depending on you choice. ")
-        break
-    except ValueError:
-        print("Incorrect selection. Please Try again to proceed.")      
-
-
+except ValueError:
+        print("You provided an incorrect input, so it will default to 1.")
+        choice = "1"
+     
 if choice == "1":
 
     commutes.commute_calc(file_name1)
