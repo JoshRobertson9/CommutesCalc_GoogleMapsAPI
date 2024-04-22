@@ -1,0 +1,72 @@
+Hello, would you like to know the commute schedule based on one starting location or compare the commutes of two locations?
+Type 1 or 2 depending on you choice. 2
+Traveling from Detroit, MI to Lansing, MI:
+The total travel time in hours is 1.42 hours.
+The total travel distance is 91.05 miles.
+The weekly round trip commute time is 14.2 hrs.       
+The weekly round trip commute distance is 910.5 miles.
+The weekly round trip fuel cost is $114.57.
+
+Traveling from Detroit, MI to Ann Arbor, MI:
+The total travel time in minutes is 45.73 minutes.    
+The total travel distance is 43.18 miles.
+The weekly round trip commute time is 1.52 hrs.       
+The weekly round trip commute distance is 86.36 miles.
+The weekly round trip fuel cost is $10.87.
+
+Traveling from Detroit, MI to Troy, MI:
+The total travel time in minutes is 26.42 minutes.
+The total travel distance is 24.12 miles.
+The weekly round trip commute time is 1.76 hrs.
+The weekly round trip commute distance is 96.48 miles.
+The weekly round trip fuel cost is $12.14.
+
+Weekly Commute Totals
+The Total Weekly Drive time of this commute schedule is 17.48 hours.
+The Total Weekly Commute distance of this commute schedule is 1093.34 miles.
+The Total Weekly Fuel Cost of this commute schedule is $137.58 cost.
+
+Yearly Commute Totals
+The Total Yearly Drive time of this commute schedule is 908.96 hours.
+The Total Yearly Commute distance of this commute schedule is 56853.68 miles.
+The Total Yearly Fuel Cost of this commute schedule is $7154.16 cost.
+
+The file locations1.csv has been updated.
+
+Traveling from Novi, MI to Lansing, MI:
+The total travel time in minutes is 59.33 minutes.
+The total travel distance is 63.2 miles.
+The weekly round trip commute time is 9.9 hrs.
+The weekly round trip commute distance is 632.0 miles.
+The weekly round trip fuel cost is $79.53.
+
+Traveling from Novi, MI to Ann Arbor, MI:
+The total travel time in minutes is 30.53 minutes.
+The total travel distance is 29.3 miles.
+The weekly round trip commute time is 1.02 hrs.
+The weekly round trip commute distance is 58.6 miles.
+The weekly round trip fuel cost is $7.37.
+
+Traveling from Novi, MI to Troy, MI:
+The total travel time in minutes is 31.62 minutes.
+The total travel distance is 32.3 miles.
+The weekly round trip commute time is 2.12 hrs.
+The weekly round trip commute distance is 129.2 miles.
+The weekly round trip fuel cost is $16.26.
+
+Weekly Commute Totals
+The Total Weekly Drive time of this commute schedule is 13.04 hours.
+The Total Weekly Commute distance of this commute schedule is 819.8 miles.
+The Total Weekly Fuel Cost of this commute schedule is $103.16 cost.
+
+Yearly Commute Totals
+The Total Yearly Drive time of this commute schedule is 678.08 hours.
+The Total Yearly Commute distance of this commute schedule is 42629.6 miles.
+The Total Yearly Fuel Cost of this commute schedule is $5364.32 cost.
+
+The file locations2.csv has been updated.
+
+Here is the comparison of Detroit, MI vs Novi, MI.
+Novi, MI has a lower total weekly commute time, beating the other option by 4.44 hours.
+Novi, MI has a lower total weekly commute distance, beating the other option by 273.54 miles.
+Novi, MI has a lower total weekly commute cost, beating the other option by $34.42.
