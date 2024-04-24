@@ -12,6 +12,8 @@ Now you can also compare the commutes of two locations. Imagine if you were tryi
 
 If you don't have a Google API key, but want to see how this works, you can read an example terminal output corresponding to the current location csv files in the file "example_result.txt".
 
+A third feature now allows you to find the central location of a list of locations. This can help you find a good meeting place for a group of people.
+
 To Run:
 
 You will need to pre-enter these addresses into the "locations1.csv" file.
@@ -31,3 +33,5 @@ For reference, there are only 2 API requests per base location to destination ca
 I have built this on my own, but took inspiration from this video to know which commmands were best to use and how to set it up initially.
 
 https://www.youtube.com/watch?v=yOXQAmYl0Aw
+
+Chat-gpt helped me understand more how to write the API calls
