@@ -22,7 +22,7 @@ If you want to compare two locations you will need to do the same for "locations
 
 Last, you will need your own API key for Google Maps and save it in the "google-maps-api-key.txt" file.
 
-After those three requirements are all set you can run the "commutes.py" file from there.
+After those three requirements are all set you can run the "main.py" file from there.
 
 If you wanted, you can even make a copy of and rename the CSV file afterwards to run/save multiple scenarios.
 
