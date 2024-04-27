@@ -1,9 +1,13 @@
 import requests
+import requests_cache
 import csv
 
 
 # Get the longitude and latitude from a give location
 def get_longlat_from_loc(location):
+
+    # Caching turned on
+    requests_cache.install_cache("central_loc_cache", expire_after=None)
 
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
@@ -26,6 +30,9 @@ def get_longlat_from_loc(location):
 # Get a location based on a given longitue and latitude
 def get_loc_from_longlat(longitude,latitude):
 
+    # Caching turned on
+    requests_cache.install_cache("central_loc_cache", expire_after=None)
+
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read()
@@ -45,6 +52,9 @@ def get_loc_from_longlat(longitude,latitude):
 # Determine the central location of a list of locations based on longitude and latitude
 def central_location():
     
+    # Caching turned on
+    requests_cache.install_cache("central_loc_cache", expire_after=None)
+
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read()
@@ -58,6 +68,8 @@ def central_location():
 
         longs = []
         lats = []
+
+        print("Locations:")
 
         for i in range(3,length):
 

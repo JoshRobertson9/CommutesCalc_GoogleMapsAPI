@@ -14,6 +14,10 @@ If you don't have a Google API key, but want to see how this works, you can read
 
 A third feature now allows you to find the central location of a list of locations. This can help you find a good meeting place for a group of people.
 
+The API calls are now cached, so they can be re-used later. They are help forever unless they are cleared.
+
+I started my approach with .JSON to cache, but later used an existing solution of requests_cache.
+
 To Run:
 
 You will need to pre-enter these addresses into the "locations1.csv" file.

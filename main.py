@@ -1,3 +1,5 @@
+import requests_cache
+
 import commutes
 import where_to_live
 import central_location
@@ -12,7 +14,8 @@ try:
         print("1. Commute from one location to several locations.")
         print("2. Coparing the overall commutes of two starting locations.")
         print("3. Finding the central meeting place for a list of locations.")
-        choice = input("\nType in your choice (1, 2, or 3). ")
+        print("4. Clear cache.")
+        choice = input("\nType in your choice (1 - 4). ")
         
 except ValueError:
         print("You provided an incorrect input, so it will default to 1.")
@@ -26,5 +29,16 @@ match choice:
             where_to_live.where_to_live_calc(file_name1,file_name2)
 
         case "3":
-            pass
-            #central_location.central_location()
+            central_location.central_location()
+
+        case "4":
+            #requests_cache.get_cache('locations_cache').clear()
+            #requests_cache.clear('locations_cache')
+            requests_cache.install_cache("locations_cache", expire_after=None)
+            requests_cache.clear()
+
+            requests_cache.install_cache("central_loc_cache", expire_after=None)
+            requests_cache.clear()
+
+            print("Cache cleared")
+            # other cache
