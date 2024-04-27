@@ -38,4 +38,4 @@ I have built this on my own, but took inspiration from this video to know which 
 
 https://www.youtube.com/watch?v=yOXQAmYl0Aw
 
-Chat-gpt helped me understand more how to write the API calls
+Chat-gpt helped me understand more how to write the API calls.

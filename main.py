@@ -1,5 +1,6 @@
 import requests_cache
 
+# My created Modules
 import commutes
 import where_to_live
 import central_location
@@ -22,12 +23,15 @@ except ValueError:
         choice = "1"
 
 match choice:
+        # Commute Calculation for 1 location to many
         case "1":
             commutes.commute_calc(file_name1)
 
+        # Commute Calulation comparing 2 starting locations to many
         case "2":
             where_to_live.where_to_live_calc(file_name1,file_name2)
 
+        # Finding the central location
         case "3":
             central_location.central_location()
 
