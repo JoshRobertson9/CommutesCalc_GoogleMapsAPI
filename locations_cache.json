@@ -1,0 +1,76 @@
+{
+    "destination_addresses": [
+        "Lansing, MI, USA"
+    ],
+    "origin_addresses": [
+        "Detroit, MI, USA"
+    ],
+    "rows": [
+        {
+            "elements": [
+                {
+                    "distance": {
+                        "text": "94.0 mi",
+                        "value": 151315
+                    },
+                    "duration": {
+                        "text": "1 hour 29 mins",
+                        "value": 5310
+                    },
+                    "status": "OK"
+                }
+            ]
+        }
+    ],
+    "status": "OK"
+}{
+    "destination_addresses": [
+        "Ann Arbor, MI, USA"
+    ],
+    "origin_addresses": [
+        "Detroit, MI, USA"
+    ],
+    "rows": [
+        {
+            "elements": [
+                {
+                    "distance": {
+                        "text": "44.6 mi",
+                        "value": 71821
+                    },
+                    "duration": {
+                        "text": "47 mins",
+                        "value": 2805
+                    },
+                    "status": "OK"
+                }
+            ]
+        }
+    ],
+    "status": "OK"
+}{
+    "destination_addresses": [
+        "Troy, MI, USA"
+    ],
+    "origin_addresses": [
+        "Detroit, MI, USA"
+    ],
+    "rows": [
+        {
+            "elements": [
+                {
+                    "distance": {
+                        "text": "24.3 mi",
+                        "value": 39031
+                    },
+                    "duration": {
+                        "text": "27 mins",
+                        "value": 1612
+                    },
+                    "status": "OK"
+                }
+            ]
+        }
+    ],
+    "status": "OK"
+}

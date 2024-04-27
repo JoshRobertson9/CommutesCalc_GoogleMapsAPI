@@ -1,7 +1,14 @@
 import requests
+import requests_cache
 import csv
 
+#import json_tools
+
+
 def commute_calc(file_name):
+    # Caching turned on
+    requests_cache.install_cache("locations_cache", expire_after=None)
+
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read()
@@ -47,6 +54,8 @@ def commute_calc(file_name):
                 print("Index Error. Fix File or Code.")
 
             r = requests.get(url + "origins=" + base + "&destinations=" + destination + "&key=" + api_key) 
+            
+            #json_tools.update_cache("locations_cache.json", r.json())
 
             # API Results
             seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
