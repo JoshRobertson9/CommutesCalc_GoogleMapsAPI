@@ -6,11 +6,9 @@ This tool can perform a number of different calculations relating to the driving
 
 ## Tools
 
-One feature calculates commute time, distance, and fuel cost  based on a starting address and one or more destinations. Results are written to a CSV file. It can project data over a week and a year based on a weekly frequency.
-
-A second feature is the same as the first, but compares two commute files between their overall values. You can have different starting and ending locations for either file.
-
-The third feature finds the central location based on a provided list of locations.
+- One feature calculates commute time, distance, and fuel cost  based on a starting address and one or more destinations. Results are written to a CSV file. It can project data over a week and a year based on a weekly frequency.
+- A second feature is the same as the first, but compares two commute files between their overall values. You can have different starting and ending locations for either file.
+- The third feature finds the central location based on a provided list of locations.
 
 ## Features
 
