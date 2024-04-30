@@ -1,41 +1,45 @@
 # CommutesCalc_GoogleMapsAPI
 
-Notes:
+## Overview
 
-This tool takes one starting address and any number of other destinations and calculates the commute time, distance, and fuel cost using the Google Maps API and writes the results to a csv. 
+This tool can perform various calculations relating to the driving commutes between any number of locations using the Google Maps API.
 
-It can take this data and project it out over a week and a year based on a weekly frequency.
+## Tools
 
-If you don't want to think of this in terms of a frequency you can just ignore the additional outputs for that, but will still need a frequency value of 1.
+- One feature calculates commute time, distance, and fuel cost  based on a starting address and one or more destinations. Results are written to a CSV file. It can project data over a week and a year based on a weekly frequency.
+- A second feature is the same as the first, but compares two commute files between their overall values. You can have different starting and ending locations for either file.
+- The third feature finds the central location based on a provided list of locations.
 
-Now you can also compare the commutes of two locations. Imagine if you were trying to buy a house. Now you could see which is overall closer to the places you frequently visit. The locations files are separate in case any of the destinations change based on the different starting locations.
+## Features
 
-If you don't have a Google API key, but want to see how this works, you can read an example terminal output corresponding to the current location csv files in the file "example_result.txt".
+- Calculate commute time, distance, and fuel cost.
+- Project commute data over a week and a year.
+- Compare commutes between two locations.
+- Find the central location of a list of locations.
+- Cached API calls for reusability.
 
-A third feature now allows you to find the central location of a list of locations. This can help you find a good meeting place for a group of people.
+## Usage - Features 1 and 2
 
-The API calls are now cached, so they can be re-used later. They are help forever unless they are cleared.
+1. Clear existing output results and enter new addresses in "locations1.csv" and optionally "locations2.csv" if you want to do a comparison.
+2. Save your Google Maps API key in "google-maps-api-key.txt".
+3. Run "main.py" to execute the tool.
+4. Select option 1 or 2.
+5. You can also clear the cache with option 4 if you want more recent information.
+6. Optionally, make copies of CSV files for multiple scenarios and change their name as needed.
 
-I started my approach with .JSON to cache, but later used an existing solution of requests_cache.
+## Usage - Feature 3
 
-To Run:
+1. Clear existing output results and enter new addresses in "central_location.csv".
+2. Save your Google Maps API key in "google-maps-api-key.txt".
+3. Run "main.py" to execute the tool.
+4. Select option 3.
+5. You can also clear the cache with option 4 if you want more recent information.
+6. Optionally, make copies of CSV files for multiple scenarios and change their name as needed.
 
-You will need to pre-enter these addresses into the "locations1.csv" file.
+## Additional Information
 
-Next you will also need to clear out any existing output results in the "locations1.csv" file for now.
-
-If you want to compare two locations you will need to do the same for "locations2.csv" with the information for the second location.
-
-Last, you will need your own API key for Google Maps and save it in the "google-maps-api-key.txt" file.
-
-After those three requirements are all set you can run the "main.py" file from there.
-
-If you wanted, you can even make a copy of and rename the CSV file afterwards to run/save multiple scenarios.
-
-For reference, there are only 2 API requests per base location to destination calculation.
-
-I have built this on my own, but took inspiration from this video to know which commmands were best to use and how to set it up initially.
-
-https://www.youtube.com/watch?v=yOXQAmYl0Aw
-
-Chat-gpt helped me understand more how to write the API calls.
+- Each base location to destination calculation requires only 2 API requests.
+- Inspiration taken from [this video](https://www.youtube.com/watch?v=yOXQAmYl0Aw).
+- Assistance provided by ChatGPT for understanding API calls.
+- For a detailed example output, refer to "example_result.txt".
+- In this tool all values for a round trip are just 2x the values for a one way trip. In reality it could be a slightly different commute each way.
