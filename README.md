@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tool can perform a number of different calculations relating to the driving commutes between a number of different places using the Google Maps API.
+This tool can perform various calculations relating to the driving commutes between any number of locations using the Google Maps API.
 
 ## Tools
 
@@ -18,13 +18,23 @@ This tool can perform a number of different calculations relating to the driving
 - Find the central location of a list of locations.
 - Cached API calls for reusability.
 
-## Usage
+## Usage - Features 1 and 2
 
-1. Enter addresses into "locations1.csv" and optionally "locations2.csv" for comparison.
-2. Clear existing output results in "locations1.csv", "locations2.csv", and "central_location.csv".
-3. Save your Google Maps API key in "google-maps-api-key.txt".
-4. Run "main.py" to execute the tool.
-5. Optionally, make copies of CSV files for multiple scenarios and change their name as needed.
+1. Clear existing output results and enter new addresses in "locations1.csv" and optionally "locations2.csv" if you want to do a comparison.
+2. Save your Google Maps API key in "google-maps-api-key.txt".
+3. Run "main.py" to execute the tool.
+4. Select option 1 or 2.
+5. You can also clear the cache with option 4 if you want more recent information.
+6. Optionally, make copies of CSV files for multiple scenarios and change their name as needed.
+
+## Usage - Feature 3
+
+1. Clear existing output results and enter new addresses in "central_location.csv".
+2. Save your Google Maps API key in "google-maps-api-key.txt".
+3. Run "main.py" to execute the tool.
+4. Select option 3.
+5. You can also clear the cache with option 4 if you want more recent information.
+6. Optionally, make copies of CSV files for multiple scenarios and change their name as needed.
 
 ## Additional Information
 
