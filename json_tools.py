@@ -2,9 +2,6 @@
 import json
 import requests
 
-# I tried to make my own solution, but decided to go with an existing solution
-# 
-
 """
 def get_data_from_cache(file_name):
     try:

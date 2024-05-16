@@ -3,9 +3,7 @@ import requests
 import requests_cache
 import csv
 
-#import json_tools
-
-
+# Calculcates the commute details from one location to any number of other locations
 def commute_calc(file_name):
     # Caching turned on
     requests_cache.install_cache("locations_cache", expire_after=None)
@@ -16,12 +14,10 @@ def commute_calc(file_name):
 
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
 
-
     # Access - Read and Write
     with open(file_name, "r") as file:
         reader = csv.reader(file)
         rows = list(reader)
-
         length = len(rows)
 
         # Re-used variables pulled
@@ -33,7 +29,7 @@ def commute_calc(file_name):
         except IndexError:
             print("Index Error. Fix File or Code.")
 
-        # Summation Variables
+        # Summation Variables started at 0
         # Total Weekly Drive Time (hours)
         twdt = 0
         
@@ -43,8 +39,7 @@ def commute_calc(file_name):
         # Total Weekly Cost ($)
         twc = 0
 
-
-        # For Loop
+        # For Loop calculating the result for each destination
         for i in range(15,length):
 
             try:
@@ -55,8 +50,6 @@ def commute_calc(file_name):
                 print("Index Error. Fix File or Code.")
 
             r = requests.get(url + "origins=" + base + "&destinations=" + destination + "&key=" + api_key) 
-            
-            #json_tools.update_cache("locations_cache.json", r.json())
 
             # API Results
             seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
@@ -75,7 +68,6 @@ def commute_calc(file_name):
             print(f"The total travel distance is {distance} miles.")
 
             # Additional Calculations
-
             # Weekly Round Trip Commute Time (hrs)
             wrtcth = round(frequency * (2* hours), 2)
 
@@ -86,11 +78,9 @@ def commute_calc(file_name):
             wrtcc = round(wrtcdm * (gas_price / fuel_efficiency), 2)
 
             # Printing Additional Results
-
             print(f"The weekly round trip commute time is {wrtcth} hrs.")
             print(f"The weekly round trip commute distance is {wrtcdm} miles.")
-            print(f"The weekly round trip fuel cost is ${wrtcc}.")
-            print()
+            print(f"The weekly round trip fuel cost is ${wrtcc}.\n")
 
             # Updating the results for that entry
             rows[i][2] = hours
@@ -121,26 +111,21 @@ def commute_calc(file_name):
         rows[1][1] = tycd = round(twcd * 52, 2)
         rows[2][1] = tyc  = round(twc * 52, 2)
 
-
     # Printing the Overall Values
     print("Weekly Commute Totals")
     print(f"The Total Weekly Drive time of this commute schedule is {twdt} hours.")
     print(f"The Total Weekly Commute distance of this commute schedule is {twcd} miles.")
-    print(f"The Total Weekly Fuel Cost of this commute schedule is ${twc} cost.")
-    print()
+    print(f"The Total Weekly Fuel Cost of this commute schedule is ${twc} cost.\n")
 
     print("Yearly Commute Totals")
     print(f"The Total Yearly Drive time of this commute schedule is {tydt} hours.")
     print(f"The Total Yearly Commute distance of this commute schedule is {tycd} miles.")
-    print(f"The Total Yearly Fuel Cost of this commute schedule is ${tyc} cost.")
-    print()
+    print(f"The Total Yearly Fuel Cost of this commute schedule is ${tyc} cost.\n")
 
     # Writing all the results back to the file
-
     with open(file_name, mode="w",newline="") as file:
         writer = csv.writer(file)
         writer.writerows(rows)
-        
         print(f"The file {file_name} has been updated.")
 
     return base, twdt, twcd, twc
