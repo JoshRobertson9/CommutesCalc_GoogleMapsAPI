@@ -1,6 +1,7 @@
 # Existing Modules
 import commutes
 
+# Comparing two commute sets
 def where_to_live_calc(file_name1, file_name2):
 
     # Location 1 Commutes
@@ -16,10 +17,9 @@ def where_to_live_calc(file_name1, file_name2):
     compare(start_loc1, twdt1, start_loc2, twdt2, "weekly commute time","hours")
     compare(start_loc1, twcd1, start_loc2, twcd2, "weekly commute distance","miles")
     compare(start_loc1, twc1, start_loc2, twc2, "weekly commute cost","$")
-    
 
+# Compares various values of a commute
 def compare(start_loc1, value1, start_loc2, value2, category_string, unit_string):
-
     # Ex category_string = "weekly commute cost"
     # Ex unit_string = "hours"
 

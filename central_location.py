@@ -3,7 +3,6 @@ import requests
 import requests_cache
 import csv
 
-
 # Get the longitude and latitude from a give location
 def get_longlat_from_loc(location):
 
@@ -27,7 +26,6 @@ def get_longlat_from_loc(location):
         print("Failed to get coordinates.")
         return None, None
 
-
 # Get a location based on a given longitue and latitude
 def get_loc_from_longlat(longitude,latitude):
 
@@ -49,7 +47,6 @@ def get_loc_from_longlat(longitude,latitude):
         print("Failed to get address.")
         return None
 
-
 # Determine the central location of a list of locations based on longitude and latitude
 def central_location():
     
@@ -59,7 +56,6 @@ def central_location():
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read()
-
 
     with open("central_location.csv", "r") as file:
         reader = csv.reader(file)
@@ -96,22 +92,20 @@ def central_location():
     central_loc = get_loc_from_longlat(central_long,central_lat)
     print(f"The central location is at {central_loc}.")
 
-
+    # Updating the central location values
     rows[1][0] = central_loc
     rows[1][1] = central_long
     rows[1][2] = central_lat
 
-
+    # Writing the central location to the csv file
     with open("central_location.csv", mode="w",newline="") as file:
         writer = csv.writer(file)
         writer.writerows(rows)
-        
         print(f"The central_location.csv file has been updated.")
 
-
-#central_location()
-
-# Example
-# o,a = get_longlat_from_loc("Detroit, MI")
-# print(o)
-# print(a)
+if __name__ == "__main__":
+    central_location()
+    # Simple Example
+    longitude, latitude = get_longlat_from_loc("Detroit, MI")
+    print(longitude)
+    print(latitude)
