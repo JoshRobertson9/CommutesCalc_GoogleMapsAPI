@@ -43,3 +43,5 @@ This tool can perform various calculations relating to the driving commutes betw
 - Assistance provided by ChatGPT for understanding API calls.
 - For a detailed example output, refer to "example_result.txt".
 - In this tool all values for a round trip are just 2x the values for a one way trip. In reality it could be a slightly different commute each way.
+
+[![Scanned by Frogbot](https://raw.github.com/jfrog/frogbot/master/images/frogbot-badge.svg)](https://docs.jfrog-applications.jfrog.io/jfrog-applications/frogbot)

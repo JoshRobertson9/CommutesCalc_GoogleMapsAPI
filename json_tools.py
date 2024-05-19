@@ -1,6 +1,7 @@
 # Existing Modules
 import json
 import requests
+import csv
 
 """
 def get_data_from_cache(file_name):
@@ -33,6 +34,3 @@ def update_cache(file_name, new_data):
     with open(file_name, 'a') as file:
         pass
         json.dump(cache, file, indent = 4)
-
-
-
