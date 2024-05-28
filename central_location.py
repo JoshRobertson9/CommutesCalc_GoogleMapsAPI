@@ -6,7 +6,7 @@ import csv
 # Get the longitude and latitude from a give location
 def get_longlat_from_loc(location):
 
-    # Caching turned on
+    # Caching turned on to store and reuse api calls
     requests_cache.install_cache("central_loc_cache", expire_after=None)
 
     # API Prep
@@ -29,7 +29,7 @@ def get_longlat_from_loc(location):
 # Get a location based on a given longitue and latitude
 def get_loc_from_longlat(longitude,latitude):
 
-    # Caching turned on
+    # Caching turned on to store and reuse api calls
     requests_cache.install_cache("central_loc_cache", expire_after=None)
 
     # API Prep
@@ -50,12 +50,13 @@ def get_loc_from_longlat(longitude,latitude):
 # Determine the central location of a list of locations based on longitude and latitude
 def central_location():
     
-    # Caching turned on
-    requests_cache.install_cache("central_loc_cache", expire_after=None)
+    # Used for other functions.
+    # Caching turned on to store and reuse api calls
+    #requests_cache.install_cache("central_loc_cache", expire_after=None)
 
-    # API Prep
-    with open("google-maps-api-key.txt","r") as api_file:
-        api_key = api_file.read()
+    # API Access - other functions make the apicall
+    #with open("google-maps-api-key.txt","r") as api_file:
+    #    api_key = api_file.read()
 
     with open("central_location.csv", "r") as file:
         reader = csv.reader(file)
@@ -68,6 +69,7 @@ def central_location():
 
         print("Locations:")
 
+        # Looping through each location to consider
         for i in range(3,length):
 
             try:
@@ -77,6 +79,7 @@ def central_location():
             except IndexError:
                 print("Index Error. Fix File or Code.") 
 
+            # Using function I wrote to get longitude and latitude
             long, lat = get_longlat_from_loc(location)
 
             rows[i][1] = long
@@ -85,6 +88,7 @@ def central_location():
             longs.append(long)
             lats.append(lat)
 
+    # Printing Results
     central_long = sum(longs)/len(longs)
     central_lat = sum(lats)/len(lats)
     print(f"The central location is {central_long}, {central_lat}.")
