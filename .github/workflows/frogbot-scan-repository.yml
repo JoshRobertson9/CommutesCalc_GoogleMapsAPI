@@ -1,4 +1,5 @@
 name: "Frogbot Scan Repository"
+# Uncomment the below to restart daily scans of the code
 #on:
 #  workflow_dispatch:
 #  schedule:
