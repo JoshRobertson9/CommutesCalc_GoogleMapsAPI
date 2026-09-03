@@ -10,7 +10,7 @@ def commute_calc(file_name):
 
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
-        api_key = api_file.read()
+        api_key = api_file.read().strip()
 
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
 
