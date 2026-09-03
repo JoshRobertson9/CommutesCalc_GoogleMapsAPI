@@ -55,7 +55,7 @@ def commute_calc(file_name):
             seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
             minutes = round(seconds / 60, 2)
             hours = round(seconds / 3600, 2)
-            distance = round(r.json()["rows"][0]["elements"][0]["distance"]["value"] / 1609, 2)
+            distance = round(r.json()["rows"][0]["elements"][0]["distance"]["value"] / 1609.344, 2)
 
             # Print Results
             print(f"Traveling from {base} to {destination}:")
