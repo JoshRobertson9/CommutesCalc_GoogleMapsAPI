@@ -82,6 +82,9 @@ def central_location():
             # Using function I wrote to get longitude and latitude
             long, lat = get_longlat_from_loc(location)
 
+            if long is None or lat is None:
+                continue
+
             rows[i][1] = long
             rows[i][2] = lat
 
@@ -89,6 +92,9 @@ def central_location():
             lats.append(lat)
 
     # Printing Results
+    if not longs:
+        raise SystemExit("No locations could be geocoded; nothing to average.")
+
     central_long = sum(longs)/len(longs)
     central_lat = sum(lats)/len(lats)
     print(f"The central location is {central_long}, {central_lat}.")
