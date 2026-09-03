@@ -11,11 +11,11 @@ def get_longlat_from_loc(location):
 
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
-        api_key = api_file.read()
+        api_key = api_file.read().strip()
 
-        url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}"
-        response = requests.get(url)
-        data = response.json()
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}"
+    response = requests.get(url)
+    data = response.json()
 
     if data['status'] == 'OK':
         longitude = data['results'][0]['geometry']['location']['lng']
@@ -34,7 +34,7 @@ def get_loc_from_longlat(longitude,latitude):
 
     # API Prep
     with open("google-maps-api-key.txt","r") as api_file:
-        api_key = api_file.read()
+        api_key = api_file.read().strip()
 
     url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={latitude},{longitude}&key={api_key}"
     response = requests.get(url)
@@ -82,6 +82,9 @@ def central_location():
             # Using function I wrote to get longitude and latitude
             long, lat = get_longlat_from_loc(location)
 
+            if long is None or lat is None:
+                continue
+
             rows[i][1] = long
             rows[i][2] = lat
 
@@ -89,6 +92,9 @@ def central_location():
             lats.append(lat)
 
     # Printing Results
+    if not longs:
+        raise SystemExit("No locations could be geocoded; nothing to average.")
+
     central_long = sum(longs)/len(longs)
     central_lat = sum(lats)/len(lats)
     print(f"The central location is {central_long}, {central_lat}.")
