@@ -25,12 +25,7 @@ def update_cache(file_name, new_data):
     except FileNotFoundError:
         cache = {}
 
-    print("test")
-    print(cache)
-    print("testtt")
     cache.update(new_data)
-    print(new_data)
 
-    with open(file_name, 'a') as file:
-        pass
+    with open(file_name, 'w') as file:
         json.dump(cache, file, indent = 4)
