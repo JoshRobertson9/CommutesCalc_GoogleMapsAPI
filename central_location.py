@@ -13,9 +13,9 @@ def get_longlat_from_loc(location):
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read().strip()
 
-        url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}"
-        response = requests.get(url)
-        data = response.json()
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?address={location}&key={api_key}"
+    response = requests.get(url)
+    data = response.json()
 
     if data['status'] == 'OK':
         longitude = data['results'][0]['geometry']['location']['lng']
