@@ -1,1 +1,24 @@
+# Secrets
 google-maps-api-key.txt
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# requests-cache backends
+*.sqlite
+*.sqlite3
+*_cache.json
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor / OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
