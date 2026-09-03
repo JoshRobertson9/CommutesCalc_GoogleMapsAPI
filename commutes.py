@@ -50,12 +50,20 @@ def commute_calc(file_name):
                 raise SystemExit(f"Bad destination row {i + 1} in {file_name}. Check the file layout.")
 
             r = requests.get(url, params={"units": "imperial", "origins": base, "destinations": destination, "key": api_key})
+            data = r.json()
+
+            if data.get("status") != "OK":
+                raise SystemExit(f"Distance Matrix request failed: {data.get('status')} {data.get('error_message', '')}".strip())
+
+            element = data["rows"][0]["elements"][0]
+            if element.get("status") != "OK":
+                raise SystemExit(f"No route from {base} to {destination}: {element.get('status')}")
 
             # API Results
-            seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
+            seconds = element["duration"]["value"]
             minutes = round(seconds / 60, 2)
             hours = round(seconds / 3600, 2)
-            distance = round(r.json()["rows"][0]["elements"][0]["distance"]["value"] / 1609.344, 2)
+            distance = round(element["distance"]["value"] / 1609.344, 2)
 
             # Print Results
             print(f"Traveling from {base} to {destination}:")
