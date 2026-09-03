@@ -24,7 +24,7 @@ def compare(start_loc1, value1, start_loc2, value2, category_string, unit_string
     # Ex unit_string = "hours"
 
     if value1 == value2:
-        print(f"Both locations have the same total {category_string} of {round(value1,2)}. ",category_string)
+        print(f"Both locations have the same total {category_string} of {round(value1,2)}.")
 
     elif value1 < value2:
         if unit_string == "$":
