@@ -24,12 +24,12 @@ The weekly round trip fuel cost is $12.14.
 Weekly Commute Totals
 The Total Weekly Drive time of this commute schedule is 17.48 hours.
 The Total Weekly Commute distance of this commute schedule is 1093.34 miles.
-The Total Weekly Fuel Cost of this commute schedule is $137.58 cost.
+The Total Weekly Fuel Cost of this commute schedule is $137.58.
 
 Yearly Commute Totals
 The Total Yearly Drive time of this commute schedule is 908.96 hours.
 The Total Yearly Commute distance of this commute schedule is 56853.68 miles.
-The Total Yearly Fuel Cost of this commute schedule is $7154.16 cost.
+The Total Yearly Fuel Cost of this commute schedule is $7154.16.
 
 The file locations1.csv has been updated.
 
@@ -57,12 +57,12 @@ The weekly round trip fuel cost is $16.26.
 Weekly Commute Totals
 The Total Weekly Drive time of this commute schedule is 13.04 hours.
 The Total Weekly Commute distance of this commute schedule is 819.8 miles.
-The Total Weekly Fuel Cost of this commute schedule is $103.16 cost.
+The Total Weekly Fuel Cost of this commute schedule is $103.16.
 
 Yearly Commute Totals
 The Total Yearly Drive time of this commute schedule is 678.08 hours.
 The Total Yearly Commute distance of this commute schedule is 42629.6 miles.
-The Total Yearly Fuel Cost of this commute schedule is $5364.32 cost.
+The Total Yearly Fuel Cost of this commute schedule is $5364.32.
 
 The file locations2.csv has been updated.
 

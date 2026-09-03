@@ -123,12 +123,12 @@ def commute_calc(file_name):
     print("Weekly Commute Totals")
     print(f"The Total Weekly Drive time of this commute schedule is {twdt} hours.")
     print(f"The Total Weekly Commute distance of this commute schedule is {twcd} miles.")
-    print(f"The Total Weekly Fuel Cost of this commute schedule is ${twc} cost.\n")
+    print(f"The Total Weekly Fuel Cost of this commute schedule is ${twc}.\n")
 
     print("Yearly Commute Totals")
     print(f"The Total Yearly Drive time of this commute schedule is {tydt} hours.")
     print(f"The Total Yearly Commute distance of this commute schedule is {tycd} miles.")
-    print(f"The Total Yearly Fuel Cost of this commute schedule is ${tyc} cost.\n")
+    print(f"The Total Yearly Fuel Cost of this commute schedule is ${tyc}.\n")
 
     # Writing all the results back to the file
     with open(file_name, mode="w",newline="") as file:
