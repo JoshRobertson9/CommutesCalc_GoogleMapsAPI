@@ -12,7 +12,7 @@ def commute_calc(file_name):
     with open("google-maps-api-key.txt","r") as api_file:
         api_key = api_file.read().strip()
 
-    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&"
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json"
 
     # Access - Read and Write
     with open(file_name, "r") as file:
@@ -49,7 +49,7 @@ def commute_calc(file_name):
             except IndexError:
                 raise SystemExit(f"Bad destination row {i + 1} in {file_name}. Check the file layout.")
 
-            r = requests.get(url + "origins=" + base + "&destinations=" + destination + "&key=" + api_key) 
+            r = requests.get(url, params={"units": "imperial", "origins": base, "destinations": destination, "key": api_key})
 
             # API Results
             seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
