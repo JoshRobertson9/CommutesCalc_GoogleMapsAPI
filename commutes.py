@@ -27,7 +27,7 @@ def commute_calc(file_name):
             fuel_efficiency = float(rows[9][1])
 
         except IndexError:
-            print("Index Error. Fix File or Code.")
+            raise SystemExit(f"Could not read settings from {file_name}. Check the file layout.")
 
         # Summation Variables started at 0
         # Total Weekly Drive Time (hours)
@@ -47,7 +47,7 @@ def commute_calc(file_name):
                 frequency = float(rows[i][1])
 
             except IndexError:
-                print("Index Error. Fix File or Code.")
+                raise SystemExit(f"Bad destination row {i + 1} in {file_name}. Check the file layout.")
 
             r = requests.get(url + "origins=" + base + "&destinations=" + destination + "&key=" + api_key) 
 
